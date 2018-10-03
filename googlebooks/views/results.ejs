@@ -1,0 +1,40 @@
+<% include partials/header %>
+<h1 class="text-center " id="error">Sorry no books found</h1>
+
+<div class="container header-text">
+    <div class="row ">
+       <% if(data["items"]) { %>
+       <style>
+     #error {
+         visibility: hidden;
+     }
+     </style>
+<% data["items"].forEach(function(book){ %>
+    <div class="col-md-6 col-lg-3 col-sm-12 border-space">
+        <div class="thumbnail">
+    <img  src="<%= book["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
+    <div class="caption">
+        <h4 class="move-down2">Title: <%= book["volumeInfo"]["title"] %></h4>
+    </div>
+    </div>
+<li>Author:<%= book["volumeInfo"]["authors"] %></li>
+<li>Publisher:<%= book["volumeInfo"]["publisher"] %></li>
+<a href="<%= book["volumeInfo"]["infoLink"] %>"  target="_blank"><button class="btn btn-success">Read More</button></a> 
+</div>
+<% }); %>
+ <% } %>
+ <style>
+     #error {
+         visibility: visibile;
+     }
+     </style>
+ 
+ 
+ <h1 class="text-center " id="error">Sorry no books found</h1>
+</div>
+</div>
+
+
+
+
+<% include partials/footer %>

@@ -1,0 +1,53 @@
+<% include partials/header2 %>
+
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:70vh; background-size: cover; 
+background-image: url(https://cdn.pixabay.com/photo/2016/02/16/21/07/books-1204029_1280.jpg);">
+   <div class="container-fluid">
+      <div class="row  justify-content-center align-items-center d-flex text-center h-100">
+        <div class="col-12 col-md-8  h-50 ">
+            <h1 class="display-2  text-light mb-2 mt-5"><strong>Welcome to Google Book Search</strong> </h1>
+            <p class="lead  text-light mb-5">One of the largest online book search</p>
+					
+			<div class="btn-container-wrapper p-relative d-block  zindex-1">
+				<a class="btn btn-link btn-lg   mt-md-3 mb-4 scroll align-self-center text-light" href="http://bootstraptor.com">
+				    <i class="fa fa-angle-down fa-4x text-light"></i>
+				</a>   
+			</div>   
+        </div>
+      </div>
+    </div>
+    </section>
+    
+    <div class="container ">
+<div class="login-form ">
+<div class="main-div form-border">
+    <div class="panel">
+   <h2>Search for your book</h2>
+   </div>
+    <form id="Login" action="/results" method="GET" onSubmit="return validateForm()">
+        <div class="form-group">
+          <input type="text" name="search" id="searchButton" class="form-control text-center" id="search" placeholder="search for book">
+        </div>
+      <button type="submit" id="button-color"  onsubmit=" return checkForm(this);"  checkForm(this) class="btn btn-primary ">
+        Search For Book
+      </button>
+    </form>
+    </div>
+</div>
+</div>
+
+
+ <script type="text/javascript">
+ function validateForm() {
+      var searchButton = document.getElementById("searchButton").value;
+      if ( searchButton === ""){
+          alert("Enter a book name please");
+          return false;
+      }
+  }
+
+
+
+</script>
+
+<% include partials/footer %>
